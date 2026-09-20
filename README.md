@@ -4,10 +4,21 @@ Raw schedule data and school calendar configurations for Bergen County Academies
 
 ## Structure
 
-- `data/schedules/` (and `schedules/`): JSON files defining start and end times for each period (`fullDays.json`, `abbreviatedDays.json`, `delayedOpeningDays.json`).
-- `data/csv/` (and `csv/`): CSV files indicating calendar days corresponding to each schedule type (`fullDays.csv`, `abbreviatedDays.csv`, `delayedOpeningDays.csv`, `specialDays.csv`).
+```
+data/
+├── csv/
+│   ├── abbreviatedDays.csv
+│   ├── delayedOpeningDays.csv
+│   ├── fullDays.csv
+│   └── specialDays.csv
+└── schedules/
+    ├── abbreviatedDays.json
+    ├── delayedOpeningDays.json
+    └── fullDays.json
+```
 
 ## Raw Endpoints
 
 Files are consumed directly by BCAway via:
-`https://raw.githubusercontent.com/bcaway/school-schedules/refs/heads/main/...`
+- `https://raw.githubusercontent.com/bcaway/school-schedules/refs/heads/main/data/schedules/{scheduleType}.json`
+- `https://raw.githubusercontent.com/bcaway/school-schedules/refs/heads/main/data/csv/{scheduleType}.csv`
